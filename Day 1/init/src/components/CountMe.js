@@ -6,9 +6,9 @@ export default class CountMe extends Component {
     this.state = {
       count: 1
     };
-    this.addOne = this.addOne.bind(this);
+    // this.addOne = this.addOne.bind(this);
   }
-  addOne() {
+  addOne = () => {
     this.setState({
       count: this.state.count + 1
     });
