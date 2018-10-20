@@ -11,8 +11,9 @@ class SignUp extends Component {
           <input className="form__elements" type="text" placeholder="Username" required></input>
           <input className="form__elements" type="password" placeholder="Password" required></input>
           <button className="btn">Sign up</button>
+          <a href="#" className="anchor">Login with facebook</a>
         </form>
-        <a href="#" className="anchor">Login with facebook</a>
+        
       </div>
     )
   }
