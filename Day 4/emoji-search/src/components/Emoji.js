@@ -6,7 +6,8 @@ class Emoji extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      emojiesArray : []
+      emojiesArray : [],
+      query : ''
     };
   }
   
@@ -16,11 +17,27 @@ class Emoji extends Component {
     })
   }
 
+  handleChange = (e) => {
+    this.setState({
+      query : e.target.value
+    })
+  }
+
   render() {
+    let filteredArray;
+    const {query, emojiesArray} = this.state;
+    if(query){ 
+      let match = new RegExp(query, 'i');
+      filteredArray = emojiesArray.filter(emoji => match.test(emoji.title));
+    } else {
+      filteredArray = emojiesArray;
+    }
+
 
     return (
       <div className="emojis">
-        {this.state.emojiesArray.map(item => (
+        <input type="text" onChange={this.handleChange}/>
+        {filteredArray.map(item => (
           <EmojiCard details={item}/>
         ))}
       </div>

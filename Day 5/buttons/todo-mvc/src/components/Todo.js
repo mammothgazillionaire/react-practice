@@ -9,7 +9,10 @@ class Todo extends Component {
     this.state= {
       count: 0,
       value:'',
-      list: []
+      activeTab: 'all',
+      list: [],
+      activeList: [],
+      completedList: []
     };
     
   }
@@ -32,9 +35,14 @@ class Todo extends Component {
     var newArray = this.state.list;
     let index = e.target.dataset.id;
     newArray[index].done = !newArray[index].done;
-    this.setState({list: [...newArray]});
-    // if(newArray[index].done === !false) return this.state.count--;
-    // this.state.count++;
+    let filteredArray = newArray.filter(todo => (todo.done === true));
+    let activeArray = newArray.filter(todo => (todo.done === true));
+    this.setState({
+      list: [...newArray],
+      acitveTodoArray: activeArray,
+      completedTodoArray: filteredArray
+    });
+  
   }
 
   deleteTask = (e) => {
@@ -46,15 +54,30 @@ class Todo extends Component {
     // this.state.count--;
   }
 
-  isCompleted = (e) => {
-    var newArray = this.state.list;
-    let index = e.target.dataset.id;
-    newArray[index].done = !newArray[index].done;
-    if(newArray[index].done === !newArray[index].done){
-      this.setState({list:[...newArray]})
-    }
+
+  handleAll = () => {
+    let allTodo = this.state.list.map(todo => todo);
+    this.setState({
+      list: allTodo,
+      activeTab: "all"
+    });
   }
 
+  handleActive = () => {
+    let activeTodo = this.state.list.filter(todo => (todo.done === false))
+    this.setState({
+      activeList: activeTodo,
+      activeTab: 'active'
+    })
+  }
+
+  handleCompleted = () => {
+    let completedTodo = this.state.list.filter(todo => (todo.done === true))
+    this.setState({
+      completedList: completedTodo,
+      activeTab: 'completed'
+    })
+  }
 
   render() {
     return (
@@ -69,7 +92,15 @@ class Todo extends Component {
         {this.state.list.map((item,i) => <Task key={i} 
         id={i}  item={item.value} handleDelete={this.deleteTask} handleCheck={this.checkTask} />)}
         </React.Fragment>
-        <Footer handleCount={this.state.list.length} completedItems={this.isCompleted}/>
+        <Footer 
+        //  array={this.state.activeTab === 'all' ? this.state.list : this.state.activeTab === 'completed' ? 
+        //  this.state.completedList : this.state.activeTab === 'active' ? 
+        //  this.state.activeList : this.state.acitveTodoArray}
+         
+         handleCount={this.state.list.filter(todo => todo.done === false).length} 
+         handleAll={this.handleAll} handleActive={this.handleActive} 
+         handleCompleted={this.handleCompleted} 
+         activeTab={this.state.activeTab}/>
         </div>
       </div>
     );

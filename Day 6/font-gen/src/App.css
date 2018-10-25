@@ -1,0 +1,69 @@
+@import url('https://fonts.googleapis.com/css?family=Bree+Serif|Cabin|Karla|Lato|Space+Mono');
+
+
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  animation: App-logo-spin infinite 20s linear;
+  height: 40vmin;
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+
+.btn,.val{
+  margin: 1rem;
+}
+.val{
+  display: flex;
+  border: 1px solid black;
+  width: 100%;
+  height: 30px;
+  text-align:left;
+  text-transform: uppercase;
+}
+.boxes{
+  display: block;
+}
+.val-1{
+ font-family: 'Karla', sans-serif;
+}
+.val-2{
+font-family: Helvetica;
+}
+.val-3{
+  font-family: 'Bree Serif', serif;
+}
+.val-4{
+  font-family: 'Lato', sans-serif;
+}
+.val-5{
+  font-family: 'Cabin', sans-serif; 
+}
+.val-6{
+  font-family: 'Space Mono', monospace; 
+}
