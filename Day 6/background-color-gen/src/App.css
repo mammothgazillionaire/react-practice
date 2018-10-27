@@ -30,3 +30,17 @@
     transform: rotate(360deg);
   }
 }
+
+.background{
+  height: 100vh;
+}
+
+.boxes{
+  position: relative;
+  top: 40%;
+  padding: 1rem;
+}
+p{
+  position: relative;
+  top: 40%;
+}

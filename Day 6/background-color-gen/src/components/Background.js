@@ -38,7 +38,7 @@ class Background extends Component {
         <label>B:</label>
         <input type="range" name="b" min="0" max="255" value={b} onChange={this.handleChange}></input>
         </div>
-        <p>rgb{`( ${r} , ${g} , ${b} `}</p>
+        <p>rgb{`( ${r} , ${g} , ${b} )`}</p>
         {/* <div className="boxes">
         <label>A:</label>
         <input type="range" name="points" min="0" max="255"></input>

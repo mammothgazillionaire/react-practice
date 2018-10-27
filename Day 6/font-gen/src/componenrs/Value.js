@@ -20,7 +20,7 @@ class Value extends Component {
   render() {
     return (
       <React.Fragment>
-        <input type="text" onChange={this.handleChange}></input>
+        <input className="takeValue" type="text" onChange={this.handleChange}></input>
         <div className="inputs">
           <div className="boxes">
           <button className="btn">Carla</button>

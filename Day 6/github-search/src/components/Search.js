@@ -39,11 +39,8 @@ class Search extends Component {
           {
           userData.map(data =>
             <div className="user">
-              <img className="avatar" src={data.avatar_url} />
-              <a href={data.url}>{data.url}</a>
-              <p>followers: {data.followers_url}</p>
-              <p>following: {data.following_url}</p>
-              <p>repos: {data.repos_url}</p>
+              <img className="avatar" src={data.avatar_url} alt="user" />
+              <a href={data.url}>{data.login}</a>
             </div>)
           }
       </ul>
