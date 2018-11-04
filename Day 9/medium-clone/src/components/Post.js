@@ -5,7 +5,11 @@ class Post extends Component {
 
   render() {
     return (
-      <Link to="/Post"></Link>
+      <Link to="/Post">
+      <h1>{}</h1>
+      <h2>{}</h2>
+      <p>{}</p>
+      </Link>
     );
   }
 }
