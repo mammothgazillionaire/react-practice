@@ -1,8 +1,9 @@
-import { BrowserRouter} from "react-router-dom";
-import Post from './components/Post';
+import React from 'react';
+// import { BrowserRouter as Router, Route, Link } from "react-router-dom";
+import Post from './Post.js';
 
-class Createpost extends Component {
-      state = { 
+class Createpost extends React.Component {
+    state = { 
         articles : [],
           heading: "",
           description: "",
@@ -53,7 +54,7 @@ class Createpost extends Component {
   render() { 
     let { articles  } = this.state;                     
     return (
-      <BrowserRouter>
+      
       <React.Fragment>
       {/* <Route path="/" component={Post} exact/> */}
       <div className="createpost" >
@@ -66,14 +67,15 @@ class Createpost extends Component {
       </div>
       {
         articles.length > 0 ? articles.map((obj,i) => <div key={i} id={i}>
-           <h1>{obj.heading}</h1> 
+        <Post data={this.state.articles} />
+           <h1>{obj.heading}</h1>  */}
            <h2>{obj.description}</h2> 
            <p>{obj.post}</p> 
            </div>) 
-           : <div></div>
+           : <div></div> 
       }
       </React.Fragment>
-      </BrowserRouter>
+      
     );
   }
 }

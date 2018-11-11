@@ -1,15 +1,18 @@
 import React, { Component } from 'react';
 import './App.css';
-import { BrowserRouter} from "react-router-dom";
+import  Createpost  from './components/Createpost'
+// import { BrowserRouter as Router, Route, Link } from "react-router-dom";
+// import Post from './components/Post';
+
+
 
 class App extends Component {
   render() {                    
     return (
-      <BrowserRouter>
-      <React.Fragment>
-      
-      </React.Fragment>
-      </BrowserRouter>
+    
+        <Createpost />
+    
+
     );
   }
 }
