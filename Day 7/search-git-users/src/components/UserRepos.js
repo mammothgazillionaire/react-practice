@@ -17,7 +17,7 @@ componentDidMount(){
 
   render() {
     return (
-      <div >
+      <div className="repos">
         <p>Repos</p>
         { this.state.userRepos ? 
           (this.state.userRepos.map(repos => <div>

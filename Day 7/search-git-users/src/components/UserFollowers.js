@@ -17,10 +17,10 @@ componentDidMount(){
 
   render() {
     return (
-      <div >
+      <div className="followers">
         <p>Followers</p>
         { this.state.userFollowers ? 
-          (this.state.userFollowers.map(user => <div>
+          (this.state.userFollowers.map(user => <div className="profiles">
             <img src={user.avatar_url} alt="img"></img>
             <p>{user.login}</p>
             </div>)) : ''

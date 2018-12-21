@@ -20,9 +20,11 @@ class UserDetails extends Component {
   render() {
     return (
       <React.Fragment>
-        <UserInfo userData={this.state.userData} />
-        <UserRepos username={this.state.username}/>
-        <UserFollowers username={this.state.username}/>
+        <div className="user"> 
+          <UserInfo userData={this.state.userData} />
+          <UserRepos username={this.state.username}/>
+          <UserFollowers username={this.state.username}/>
+        </div>
       </React.Fragment>
     );
   }

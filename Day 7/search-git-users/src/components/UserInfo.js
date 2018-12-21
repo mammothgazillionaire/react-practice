@@ -5,7 +5,7 @@ class UserInfo extends Component {
   render() {
     const { login , avatar_url , name , followers, following , public_repos} = this.props.userData;
     return (
-      <div>
+      <div className="user-info">
         <img src={avatar_url} alt={name} className="user--img"></img>
         <p>{name}</p>
         <p>{`followers ${followers}`}</p>
