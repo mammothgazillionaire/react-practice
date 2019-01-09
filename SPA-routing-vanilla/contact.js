@@ -1,0 +1,1 @@
+let contact = `<div class="contact">on contact page</div>`;

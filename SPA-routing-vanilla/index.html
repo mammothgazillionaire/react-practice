@@ -1,0 +1,19 @@
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>routing</title>
+  <script src="home.js"></script>
+  <script src="about.js"></script>
+  <script src="contact.js"></script>
+</head>
+<body>
+  <a href="/" onclick="onNavItemClick('/'); return false;"; >home</a>
+  <a href="/about" onclick="onNavItemClick('/about');  return false;">about</a>
+  <a href="/contact" onclick="onNavItemClick('/contact'); return false;">contact</a>
+  
+  <div id="root"></div>
+  <script src="route.js"></script>
+</body>
+</html>

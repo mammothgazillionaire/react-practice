@@ -1,0 +1,1 @@
+let home = `<div class="home">on home page</div>`;
